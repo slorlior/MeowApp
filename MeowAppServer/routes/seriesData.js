@@ -14,7 +14,9 @@ router.get('/', function (req, res) {
         var episodesPromises = seriesData.map(serieData => tvmaze.getEpisodes(serieData, req.query.fromDate));
         Promise.all(episodesPromises)
         .then(function(episodes) {
-          res.send(episodes);
+          var allEpisodes = [];
+          allEpisodes = [].concat.apply([], episodes);
+          res.send(allEpisodes);
         })
       }).catch(function(error) {
         throw error;
