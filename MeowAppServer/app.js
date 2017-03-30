@@ -3,8 +3,10 @@ var bodyParser = require('body-parser-json');
 var app = express();
 
 var series = require('./routes/series');
+var seriesData = require('./routes/seriesData');
 app.use(bodyParser.json());
 app.use('/series', series);
+app.use('/seriesData', seriesData);
 
 app.get('/', function (req, res) {
   res.send('Hello World!')

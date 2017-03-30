@@ -1,14 +1,15 @@
 var express = require('express');
 var fs = require('fs');
+var fileAccess = require('../modules/fileAccess.js');
 var router = express.Router();
 var seriesPath = '././files/series.json';
 
 router.get('/', function (req, res) {
-  fs.readFile(seriesPath, function (err, data) {
-    if (err) {
-      throw err;
-    }
-    res.send(JSON.parse(data));
+  fileAccess.getSeries()
+  .then(function(data) {
+    res.send(data);
+  }).catch(function(error) {
+    throw error;
   });
 });
 
