@@ -34,7 +34,7 @@ function parseEpisode(episode, serieData) {
   parsedEpisode.serieId = serieData.id;
   parsedEpisode.serieName = serieData.name;
   parsedEpisode.image = serieData.image;
-  parsedEpisode.name = episode.name;
+  parsedEpisode.episodeName = episode.name;
   var seasonNumber = episode.season;
   if (seasonNumber < 10) {
     seasonNumber = "0" + seasonNumber;
@@ -45,6 +45,9 @@ function parseEpisode(episode, serieData) {
   }
   parsedEpisode.seasonAndEpisode = "S" + seasonNumber + "E" + episodeNumber;
   parsedEpisode.airDate = moment(episode.airdate, 'YYYY-MM-DD').add(1, 'day').format(dateFormat);
+  var parsedForDisplaySerieName = parsedEpisode.serieName.replace(':', ' -');
+  var parsedForDisplayEpisodeName = parsedEpisode.episodeName.replace(':', ' -');
+  parsedEpisode.fullDisplayName = parsedForDisplaySerieName + " " + parsedEpisode.seasonAndEpisode + " - " + parsedForDisplayEpisodeName;
 
   return parsedEpisode;
 };

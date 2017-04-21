@@ -16,11 +16,21 @@ describe('end to end tests', function() {
         var seriesDataPromises = ids.map(tvmaze.getSerieData);
         Promise.all(seriesDataPromises)
         .then(function(seriesData) {
-          var episodesPromises = seriesData.map(tvmaze.getEpisodes);
+          var episodesPromises = seriesData.map(serieData => tvmaze.getEpisodes(serieData, "10/10/2016"));
           Promise.all(episodesPromises)
           .then(function(episodes) {
-            episodes.should.be.a('array');
-            episodes.length.should.above(0);
+            var allEpisodes = [];
+            allEpisodes = [].concat.apply([], episodes);
+            allEpisodes.should.be.a('array');
+            allEpisodes.length.should.above(0);
+            var firstEpisodeAfterDate = { serieId: 4,
+              serieName: 'Arrow',
+              image: 'http://static.tvmaze.com/uploads/images/medium_portrait/75/189983.jpg',
+              name: 'The Recruits',
+              seasonAndEpisode: 'S05E02',
+              airDate: '13/10/2016'
+            };
+            expect(allEpisodes[0]).to.eql(firstEpisodeAfterDate);
             done();
           })
         }).catch(function(error) {
