@@ -5,6 +5,7 @@
       <th>serieName</th>
       <th>episodeName</th>
       <th>seasonAndEpisode</th>
+      <th>airDay</th>
       <th>airDate</th>
     </tr>
     <tr *ngFor="let serie of series">
@@ -12,6 +13,7 @@
       <td [ngxClipboard]="inputTarget">{{serie.serieName}}</td>
       <td [ngxClipboard]="inputTarget">{{serie.episodeName}}</td>
       <td [ngxClipboard]="inputTarget">{{serie.seasonAndEpisode}}</td>
+      <td [ngxClipboard]="inputTarget">{{serie.airDay}}</td>
       <td [ngxClipboard]="inputTarget">{{serie.airDate}}</td>
     </tr>
   </table>

@@ -15,7 +15,7 @@ export class SeriesListComponent implements OnInit {
   constructor(private _seriesService:SeriesService) { }
 
   ngOnInit() {
-    this._seriesService.getSeries()
+    this._seriesService.getSeriesByDate(moment().subtract(7, "days").format('DD/MM/YYYY'))
     .subscribe(
       series => {
         this.orderSeries(series);
@@ -34,7 +34,7 @@ export class SeriesListComponent implements OnInit {
           }
           return -1;
 
-          
+
         });
       }
     }

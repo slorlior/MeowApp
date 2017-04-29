@@ -14,11 +14,21 @@ export class SeriesService {
   constructor(private http:Http) { }
 
   getSeries(): Observable<ISerie[]> {
-    return this.http.get(this.meowServiceUrl+"/seriesData?fromDate="+moment().day(-7,).format('DD/MM/YYYY'))
+    return this.http.get(this.meowServiceUrl+"/seriesData")
     .map((res:Response)=> <ISerie[]>res.json())
     .catch((error:Response)=>{
       console.log(error);
       return Observable.throw(error.json().error || 'Server error');
     });
+  }
+
+  getSeriesByDate(fromDate:string): Observable<ISerie[]> {
+    return this.http.get(this.meowServiceUrl+"/seriesData?fromDate="+fromDate)
+    .map((res:Response)=> <ISerie[]>res.json())
+    .catch((error:Response)=>{
+      console.log(error);
+      return Observable.throw(error.json().error || 'Server error');
+    });
+    // return this.http.get(this.meowServiceUrl+"/seriesData?fromDate="+moment().day(-7,).format('DD/MM/YYYY'))
   }
 }

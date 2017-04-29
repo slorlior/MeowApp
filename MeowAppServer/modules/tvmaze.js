@@ -45,6 +45,7 @@ function parseEpisode(episode, serieData) {
   }
   parsedEpisode.seasonAndEpisode = "S" + seasonNumber + "E" + episodeNumber;
   parsedEpisode.airDate = moment(episode.airdate, 'YYYY-MM-DD').add(1, 'day').format(dateFormat);
+  parsedEpisode.airDay = moment(parsedEpisode.airDate, dateFormat).format('dddd');
   var parsedForDisplaySerieName = parsedEpisode.serieName.replace(':', ' -');
   var parsedForDisplayEpisodeName = parsedEpisode.episodeName.replace(':', ' -');
   parsedEpisode.fullDisplayName = parsedForDisplaySerieName + " " + parsedEpisode.seasonAndEpisode + " - " + parsedForDisplayEpisodeName;

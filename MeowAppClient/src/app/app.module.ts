@@ -10,20 +10,22 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { SeriesListComponent } from './series-list/series-list.component';
 
 import { ClipboardModule } from 'ngx-clipboard';
+import { MainPageComponent } from './main-page/main-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SerieComponent,
     PageNotFoundComponent,
-    SeriesListComponent
+    SeriesListComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot([
-      { path: 'series', component: SeriesListComponent },
+      { path: 'series', component: MainPageComponent },
       { path: '', redirectTo: '/series', pathMatch: 'full'},
       { path: '**', component: PageNotFoundComponent }
     ]),
