@@ -33,9 +33,23 @@ export class SeriesListComponent implements OnInit {
             return 1;
           }
           return -1;
-
-
         });
+      }
+    }
+
+    colorSerie(serie:ISerie){
+      if(serie){
+        let airDate=moment(serie.airDate,'DD/MM/YYYY');
+        if(airDate.isBetween(moment().add(-8,'days'),moment())){
+          return "success";
+        }
+        if(airDate.isSame(moment())){
+          return "danger";
+        }
+        if(airDate.isBetween(moment(),moment().add(7,'days'))){
+          return "info";
+        }
+        return "";
       }
     }
 

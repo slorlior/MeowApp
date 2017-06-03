@@ -9,14 +9,7 @@
       <th>airDate</th>
       <th>download</th>
     </tr>
-    <tr *ngFor="let serie of series">
-      <td [ngxClipboard]="inputTarget"><span class="hidden-copy-name" #inputTarget>{{serie.fullDisplayName}}</span><img class="serie-image" src="{{serie.image}}"/></td>
-      <td [ngxClipboard]="inputTarget">{{serie.serieName}}</td>
-      <td [ngxClipboard]="inputTarget">{{serie.episodeName}}</td>
-      <td [ngxClipboard]="inputTarget">{{serie.seasonAndEpisode}}</td>
-      <td [ngxClipboard]="inputTarget">{{serie.airDay}}</td>
-      <td [ngxClipboard]="inputTarget">{{serie.airDate}}</td>
-      <td><a href="https://rarbg.to/torrents.php?search={{serie.serieName}}+{{serie.seasonAndEpisode}}" target="_blank">RARBG</a></td>
+    <tr *ngFor="let serie of series" [class]="colorSerie(serie)" [app-serie]="serie">
     </tr>
   </table>
 </div>

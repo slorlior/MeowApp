@@ -2,18 +2,6 @@
   width: 80%;
   margin: auto;
 }
-
-.serie-image{
-  height: 30%;
-}
-
 .series-grid td, th{
   font-size: 150%;
-}
-
-.hidden-copy-name {
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  font-size: 0;
 }
