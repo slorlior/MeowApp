@@ -40,13 +40,15 @@ export class SeriesListComponent implements OnInit {
     colorSerie(serie:ISerie){
       if(serie){
         let airDate=moment(serie.airDate,'DD/MM/YYYY');
-        if(airDate.isBetween(moment().add(-8,'days'),moment())){
+        console.log(moment().format('DD/MM/YYYY'))
+
+        if(airDate.isBetween(moment().add(-8,'days'),moment().add(-1,'days'))){
           return "success";
         }
-        if(airDate.isSame(moment())){
+        if(airDate.isSame(moment().format('DD/MM/YYYY'))){
           return "danger";
         }
-        if(airDate.isBetween(moment(),moment().add(7,'days'))){
+        if(airDate.isBetween(moment().add(1,'days'),moment().add(7,'days'))){
           return "info";
         }
         return "";
