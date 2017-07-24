@@ -43,7 +43,7 @@ export class SeriesListComponent implements OnInit {
         if(airDate.isBetween(moment().add(-8,'days'),moment().add(-1,'days'))){
           return "success";
         }
-        if(airDate.isSame(moment().format('DD/MM/YYYY'))){
+        if(airDate.get("year") == moment().get("year") && airDate.get("month") == moment().get("month") && airDate.get("date") == moment().get("date")){
           return "danger";
         }
         if(airDate.isBetween(moment().add(1,'days'),moment().add(7,'days'))){
