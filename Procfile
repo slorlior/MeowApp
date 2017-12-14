@@ -1,2 +1,2 @@
-web: npm run client
-server: npm run server
+client: npm run client
+web: npm run server
