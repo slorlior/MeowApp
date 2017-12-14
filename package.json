@@ -2,6 +2,7 @@
     "name": "meow-app",
     "version": "1.0.0",
     "scripts": {
+        "start": "concurrently \"npm run server\" \"npm run client\"",
         "server": "cd MeowAppServer && npm start",
         "client" : "cd MeowAppClient && npm start"
     },
