@@ -2,7 +2,8 @@
     "name": "meow-app",
     "version": "1.0.0",
     "scripts": {
-        "start": "concurrently \"cd MeowAppServer && npm start\" \"cd MeowAppClient && npm start\""
+        "server": "cd MeowAppServer && npm start",
+        "client" : "cd MeowAppClient && npm start"
     },
     "dependencies": {},
     "devDependencies": {

@@ -33,6 +33,10 @@ app.use(function(err, req, res, next) {
     });
   });
 
-app.listen(process.env.PORT || 3000, function () {
-  console.log('MeowApp listening on port ' + process.env.PORT || 3000 + "!");
+var port = 3000;
+if (process.env.PORT) {
+  port = process.env.PORT;
+}
+app.listen(port, function () {
+  console.log('MeowApp listening on port ' + port + "!");
 });
