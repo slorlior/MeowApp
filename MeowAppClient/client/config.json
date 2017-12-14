@@ -1,0 +1,5 @@
+{
+    "seriesUrl": "http://localhost:3000/series",
+    "seriesDataUrl": "http://localhost:3000/seriesData",
+    "torrentSearchUrl": "https://rarbg.to/torrents.php?search="
+}

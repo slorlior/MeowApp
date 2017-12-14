@@ -1,0 +1,26 @@
+.serie-image{
+  height: 30%;
+}
+
+.hidden-copy-name {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 0;
+}
+
+.last-week {
+    background-color: #dff0d8; 
+}
+
+.today {
+    background-color: #f2dede; 
+}
+
+.next-week {
+    background-color: #d9edf7; 
+}
+
+.other {
+    background-color: #868e96;
+}
