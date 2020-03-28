@@ -4,7 +4,7 @@
     "scripts": {
         "start": "concurrently \"npm run server\" \"npm run client\"",
         "server": "cd MeowAppServer && npm start",
-        "client" : "cd MeowAppClient && npm start"
+        "client": "cd MeowAppClient && npm start"
     },
     "dependencies": {},
     "devDependencies": {

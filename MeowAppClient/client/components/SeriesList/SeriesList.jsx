@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import DatePicker from 'react-datepicker';
-require("datepicker_css");
+import "react-datepicker/dist/react-datepicker.css";
 import ReactTooltip from 'react-tooltip'
 import moment from 'moment';
 import Serie from '../Serie/Serie.jsx';
