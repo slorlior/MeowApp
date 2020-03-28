@@ -19,7 +19,7 @@
     "react-router-dom": "^4.2.2",
     "react-tooltip": "^3.4.0",
     "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.3"
+    "webpack-dev-server": "^3.1.11"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
